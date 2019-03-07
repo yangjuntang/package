@@ -1,0 +1,9 @@
+1.在yarn
+HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop spark-submit --driver-memory 512m --executor-cores 2 --master yarn --deploy-mode client WordCount.py
+
+2.在standalone cluster
+spark-submit --master spark://master:7077 --deploy-mode client --executor-memory 500m --total-executor-cores 2 WordCount.py
+
+3.关于在本地模式下开启notebook
+先切换目录：
+PYSPARK_DRIVER_PYTHON=ipython PYSPARK_DRIVER_PYTHON_OPTS="notebook" pyspark
